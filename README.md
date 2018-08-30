@@ -34,14 +34,14 @@ Day 2:
   - Each processor is assigned a local queue of goroutines. 
   - Each processor can be assigned one or more OS threads, but only one can be executed at a time (per processor)
   - A processor is starved if its OS threads are blocked or in a system call, and the local queue is empty
-  - In the case the processor is idle, it can steal goroutines from other processor's local queues
+  - In the case the processor is idle, it can steal goroutines from other processor's local queues. Technically, the process doesn't steal work of course, the go runtime creates a background thread monitor which performs this re-allocation of work.
   - At intermittent times, the processor is assigned work from the global queue as well
   - However, re-allocating goroutines across queues increases latency
 
 **Talk 2: Macaroons**
 - Macaroons are essentially cookies (tokens) with authorization info.
 - They can be delegated to another entity which will act on the requester's behalf, with the requester's authority
-- Caveats can be added to the macaroon (by 3rd parties as well), so it be used to restrict what services can do even with your full authority. Ex: a member's role is "admin", but caveats can be added at runtime to the macaroon, to add restrictions with what can be done with the token instance
+- Caveats can be added to the macaroon (by 3rd parties as well), so it can be used to restrict what services can do even with your original authority. Ex: a member's role is "admin", but caveats can be added at runtime to the macaroon, to add restrictions with what can be done with the token instance
 
 **Talk 3: Go For Information Displays:**
 - Look at SVG Go, SVG Play which will allow us to change code (data) and generate pictures, charts.
