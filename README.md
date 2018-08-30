@@ -26,7 +26,7 @@ Day 1: Testing Workship:
 Day 2:
 -------
 
-Talk 1: Go Scheduler:
+**Talk 1: Go Scheduler:**
   - Distributes goroutines over multiple OS worker threads
   - Go has a work-stealing implementation (vs work-sharing):
     - Work-sharing: When a processor generates new threads, it attempts to migrate some of them to the other processors with the hopes of them being utilized by the idle/underutilized processors.
@@ -38,20 +38,20 @@ Talk 1: Go Scheduler:
   - At intermittent times, the processor is assigned work from the global queue as well
   - However, re-allocating goroutines across queues increases latency
 
-Talk 2: Macaroons
+**Talk 2: Macaroons**
 - Macaroons are essentially cookies (tokens) with authorization info.
 - They can be delegated to another entity which will act on the requester's behalf, with the requester's authority
 - Caveats can be added to the macaroon (by 3rd parties as well), so it be used to restrict what services can do even with your full authority. Ex: a member's role is "admin", but caveats can be added at runtime to the macaroon, to add restrictions with what can be done with the token instance
 
-Talk 3: Go For Information Displays: 
+**Talk 3: Go For Information Displays:**
 - Look at SVG Go, SVG Play which will allow us to change code (data) and generate pictures, charts.
 - Used rasberry-pi to run a program that loads weather and current stories onto screen. Leveraged OpenVG pkg
 - Check out his GoDeck pkg which is for creating presentations
 
-Talk 4: Machine Learning on GoCode
+**Talk 4: Machine Learning on GoCode**
 - Source{d} (company), are leveraging machine learning to have some automated code reviews, style guide enforcing.
 
-Talk 5: Structuring Go Apps:
+**Talk 5: Structuring Go Apps:**
 - Used a beer reviewing app example: able to add beers, review beers, list all beers, ability to add sample data
 - "Layered Architecture"; group by functionality (handlers, models, storage, etc)
 - Group by Module; (beers, reviews, storage)
@@ -67,7 +67,7 @@ Talk 5: Structuring Go Apps:
   - "Building an enterprise service in Go"
   - Hexagonal Architecture, Chris Fidao
 
-Talk 6: Allocator Wrestling:
+**Talk 6: Allocator Wrestling:**
 - Program's allocation pattern can affect its perf, but they are opaque
 - Depending on their lifetimes, objects are allocated either on stack or heap
 - Efficiently satisfy allocations of a given size, but avoid fragmentations. --> Allocate like sized objects in blocks
@@ -80,7 +80,7 @@ Talk 6: Allocator Wrestling:
 - Readings:
   - Allocation Efficient in High Perf Go Routines 
 
-Talk 7: gPRC, Finite State Machine, Talk:
+**Talk 7: gPRC, Finite State Machine, Talk:**
 - State Machine Types: Deterministic vs Non-Deterministic
 - Ex: Onboarding/Login UX Flow; final output depends on sequence of defined inputs
 - Shouldn't be stuck in a state, add monitoring around error threshold, and possible revert to a previous state
@@ -89,7 +89,7 @@ Talk 7: gPRC, Finite State Machine, Talk:
 Day 3:
 -------
 
-Talk 1: Writing Accessible Go:
+**Talk 1: Writing Accessible Go:**
 - Toolset isn't written with accessibility in mind
 - Products are made accessible, but development process isn't targeted towards those with disabilities
 - Declare variables just prior to time of use, in order to reduce information context a reader must have
@@ -98,7 +98,7 @@ Talk 1: Writing Accessible Go:
 - Disability isn't always visible, there may be folks that don't wish to voice them
 - "Curb Cut Effect" --> Something built for one audience, can have benefecial impacts on other audiences
 
-Talk 2: Going Serverless
+**Talk 2: Going Serverless**
 -  Its offloading processing to a black-box service provider, running your logic
 - Reduces boiler plate (ex: Leveraging muxs, deployment code)
 - Functions (your logic) + Events (resonse to something that happens in the cloud) + Manged Services (pay per use)
@@ -108,10 +108,10 @@ Talk 2: Going Serverless
 - We need instrumentation tools (ex: Open Census) to be able to obtain tracing
 - Questions: How would you leverage shared helper methods across funcs?
 
-Talk 3: Go in Debian
+**Talk 3: Go in Debian**
 - manpages.debian.org
 
-Talk 4: Contributing to Go
+**Talk 4: Contributing to Go**
 - Contribute error reports:
 	- What were you trying to do?
 	- What did you expect to see?
@@ -122,7 +122,7 @@ Talk 4: Contributing to Go
 - bit.ly/goscratch to test out some initial changes. Its a scratchpad for you to understand how the committing process works
 - golang-dev mailing list for posting help or when you get stuck with your changes
 
-Talk 5: Guide to Secure Connections:
+**Talk 5: Guide to Secure Connections:**
 - Look at "Kubernetes The Hard Way" which walks through setting up security keys, etc but doesn't teach you the details as to why these keys and security files are required
 - TLS (was called SSL) connections: Establish identities between 2 parties, and encrypt traffic
 - "Connection Refused" err msg usually mean wrong port thats not open, so TCP error, and usually not anything wrong with TLS settings
@@ -146,14 +146,14 @@ Talk 5: Guide to Secure Connections:
 		- May need to add CA cert to TLSConfig.RootCAs
 - github.com/lizrice/secure-connections
 
-Talk 6: MongoDB: Lessons Learned From Implementing Specs:
+**Talk 6: MongoDB: Lessons Learned From Implementing Specs:**
 - MongoDB has many drivers for different languages, so they consistent specs
 - Tests are standardardized for different drivers; yaml, json and prose test
 - Write clear specs that aren't open for implementation
 - Share your knowledge gained during the process
 - blog.cloudflare.com/exposing-go-on-the-internet
 
-Talk 7: Building Command Line User Interfaces:
+**Talk 7: Building Command Line User Interfaces:**
 - bit.ly/cli-ui
 Pkgs:
 	- chzyer/readlines
